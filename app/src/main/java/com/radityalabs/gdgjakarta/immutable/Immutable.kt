@@ -1,13 +1,20 @@
 package com.radityalabs.gdgjakarta.immutable
 
-private val _list = mutableListOf(1, 2, 3, 5, 6)
-val list: List<Int>
-    get() = _list
+class Immutable {
+    private val _list = mutableListOf(1, 2, 3, 5, 6)
+    val list: List<Int>
+        get() = _list
+
+    fun add(number: Int) {
+        _list.add(number)
+    }
+}
 
 fun main() {
-    print(list)
-    _list.add(10)
-    print(list)
+    val imm = Immutable()
+    print(imm.list)
+    imm.add(10)
+    print(imm.list)
 }
 
 
@@ -21,4 +28,5 @@ fun main() {
     val foo = Foo("raditya", "jakarta")
     val bar = foo.copy(name = "foo-bar")
     print(bar)
-}*/
+}
+*/
